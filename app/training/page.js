@@ -1,6 +1,13 @@
-import { getTrainings } from '@/lib/training';
+import { redirect } from "next/navigation";
+
+import { getTrainings } from "@/lib/training";
+import { verifyAuthSession } from "@/lib/auth";
 
 export default async function TrainingPage() {
+  const validUser = await verifyAuthSession();
+  if (!validUser.user) {
+    redirect("/login");
+  }
   const trainingSessions = getTrainings();
 
   return (

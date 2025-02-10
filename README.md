@@ -2,6 +2,12 @@
 
 ## Login
 
+- install 3rd party package 'lucia' for authentication
+  - npm install lucia @lucia-auth/adapter-sqlite
+  - using sqlite adapter, create a session
+  - verify session
+  - call 'verifysession' api from protected pages
+
 ## Training
 
 ### Notes
