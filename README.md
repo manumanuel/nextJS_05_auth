@@ -16,6 +16,7 @@
 - server function must be declared as 'async' functions
 
 - useFormState from 'react-dom' is a custom hook that manages form state
+
   - should mark the page with 'use client' [useFormState is only work in client side]
   - used to handle the state of form inputs, validations, form-related logic
   - eg : const [formState, formAction] = useFormState(actionName, {});
@@ -23,3 +24,5 @@
   - formAction will act as a wrapper for the defined action, also it will bind with form's action tag
     ie <form id="auth-form" action={formAction}> </form>
   - formState represents the response getting back from the server action
+
+- searchParams is the default query params
