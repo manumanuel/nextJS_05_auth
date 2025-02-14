@@ -26,3 +26,34 @@
   - formState represents the response getting back from the server action
 
 - searchParams is the default query params
+
+- to achieve nested routing we are using '(RouterGroups)'
+- useRouter
+
+  - used for page rendering [entire page reload]
+  - import {useRouter} from 'next/router' [in functional components, modern way]
+  - import {withRouter} from 'next/router' [in class based components, older way]
+  - to access the properties/ methods,
+
+    eg: const router = useRouter();
+    router.pathname [returns the path]
+    router.query [returns the parameters encoded in url/nested route details ]
+
+  - to access project files/folders dynamically, use can enclose that in []
+    - eg: [id].js, [id]/index.js etc...
+  - catch all routes with [...slug] (slug can be replaced with desired name)
+    - when using catch all routes, router.query will returns the nested
+      routes parameters as a set of array instead of string val
+  - Navigating with Link
+    - import Link from 'next/link'
+    - eg: <Link href='/portfolio'></Link>
+
+### Difference between userRouter & Link
+
+- Link
+  - used for declarative navigation
+  - linking from one page to another in components
+  - handle client side navigation automatically
+- useRouter
+  - used to navigate programmatically or to access current route/params from components
+  - used for conditional navigation, route changes on events, getting current paths etc
